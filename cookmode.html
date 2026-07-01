@@ -1,6 +1,9 @@
-<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="dns-prefetch" href="https://script.google.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>CookMode</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -84,8 +87,9 @@
     <div class="loader__text" id="loader-text">Loading…</div>
     <button class="loader__retry" id="loader-retry" onclick="location.reload()">Tap to retry</button>
   </div>
-  <iframe id="app-frame" scrolling="yes" allowfullscreen></iframe>
+  <iframe id="app-frame" scrolling="yes" allowfullscreen fetchpriority="high"></iframe>
   <script>
+    document.getElementById("app-frame").src = "https://script.google.com/macros/s/AKfycbynzZjtpK0-UjTftTV0mgFrV89bW2hUvm5XtDS8EXmqKSFqRVHiYaxocz5JaCdJmRPxCQ/exec?t=" + Date.now();
     function sizeFrame() {
       var h = (window.visualViewport ? window.visualViewport.height : window.innerHeight);
       document.getElementById("app-frame").style.height = h + "px";
@@ -104,7 +108,6 @@
       clearTimeout(_stalledTimer);
       if (_loader) { _loader.classList.add("loader--hidden"); }
     });
-    document.getElementById("app-frame").src = "https://script.google.com/macros/s/AKfycbynzZjtpK0-UjTftTV0mgFrV89bW2hUvm5XtDS8EXmqKSFqRVHiYaxocz5JaCdJmRPxCQ/exec?t=" + Date.now();
   </script>
 </body>
 </html>
