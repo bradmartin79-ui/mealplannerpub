@@ -36,6 +36,9 @@
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbxvwLhpkTycZQBKxYWrVi1SV1hkZ0KOP5n-7fzyVXnLK3EXbFHZCu6_UAlPDqo7qaKI9A/exec?household=amanda" scrolling="yes" allowfullscreen></iframe>
+  <iframe id="app-frame" scrolling="yes" allowfullscreen></iframe>
+  <script>
+    document.getElementById("app-frame").src = "https://script.google.com/macros/s/AKfycbxvwLhpkTycZQBKxYWrVi1SV1hkZ0KOP5n-7fzyVXnLK3EXbFHZCu6_UAlPDqo7qaKI9A/exec?household=amanda&t=" + Date.now();
+  </script>
 </body>
 </html>
